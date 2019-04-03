@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'blog/index'
-  get 'blog/new'
-  get 'blog/show'
-  get 'blog/edit'
+  resources :products
+  resources :blog
   root 'welcome#index'
   get 'welcome/index', to: 'welcome#index', as: 'welcome'
   get 'about', to: 'welcome#about'

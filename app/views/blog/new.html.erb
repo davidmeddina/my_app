@@ -1,7 +1,15 @@
-<h1>Blog#new</h1>
 
-<form action="" method="">
-<input type="text" placeholder="Ingrese nombre acá"></input>
-<input type="password" placeholder="Ingrese password"></input>
-<input type="submit"></input>
-</form>
+<%= form_for @blog, url: blog_index_path, method: :post do |f| %>
+  <h3>Crea nuevo contenido</h3>
+  <div>
+    <%= f.label :title, "Título" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :title, "Contenido" %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

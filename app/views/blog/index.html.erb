@@ -1,15 +1,23 @@
-<h1>Blog#index</h1>
-<p>Esto es texto simple</p>
-
-## Header
-## Partial / helper / componente
-<%= render 'partials/header' %>
-
-## Listado de artículos
-
-<%= link_to("Contactanos", contact_us_path, class: "link-to-contact") %> ## Me lleva a /contact
-
-<%= link_to("Prices", prices_url, class: "link-to-contact") %> ## Me lleva a http://localhost:3000/prices
-
-## Barra lateral
-
+<h1> Blogs </h1>
+<%= link_to  "Crear Post", new_blog_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+    </tr>
+    <body>
+      
+      <% @blog.each do |blog| %>
+        <tr>
+          <td><%= blog.title %></td>
+          <td><%= blog.content %></td>
+          <td><%= link_to  "Show", blog_path(blog) %></td>
+          <td><%= link_to  "Edit", edit_blog_path(blog) %></td>
+          <td><%= link_to  "Delete", blog_path(blog), method: :delete, data: {confirm: "Está seguro de eliminar?"} %></td>
+        </tr>
+      <% end %>
+      
+    </body>
+  </thead>
+</table>

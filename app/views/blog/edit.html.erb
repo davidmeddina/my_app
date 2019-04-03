@@ -1,2 +1,14 @@
-<h1>Blog#edit</h1>
-<p>Find me in app/views/blog/edit.html.erb</p>
+
+<%= form_for @blog, url: blog_path(@blog), method: :put do |f| %>
+  <div>
+    <%= f.label :title, "Título" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :title, "Contenido" %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
