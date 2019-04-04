@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
 validates :title, :content, presence: true
 
-belogns_to :user
+belongs_to :user
 end
 
 
